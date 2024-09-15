@@ -49,6 +49,7 @@ BARE BONES {
 
         * Quiz yourself on everything VGA buffer.
             - https://os.phil-opp.com/minimal-rust-kernel/#printing-to-screen
+            + This isn't to be focused on here, but on the VGA Text Mode section.
 
         * Quiz yourself a bit on how bootimage works and what an ELF file is.
             - https://os.phil-opp.com/minimal-rust-kernel/#how-does-it-work
