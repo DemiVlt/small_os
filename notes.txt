@@ -1,0 +1,86 @@
+* I really like the idea of having notes for this and really hope you follow
+  along, Demivolt.
+* https://os.phil-opp.com/
+
+BARE BONES { 
+    A Freestanding Rust Binary {
+        * Maybe create a minimal binary project that runs on top of an existing
+          operating system?
+            - https://os.phil-opp.com/freestanding-rust-binary/#summary
+            - https://doc.rust-lang.org/1.16.0/book/no-stdlib.html
+
+        / https://doc.rust-lang.org/1.30.0/book/first-edition/functions.html#diverging-functions
+        / https://github.com/rust-lang/rust/blob/485397e49a02a3b7ff77c17e4a3f16c653925cb3/src/libcore/marker.rs#L296-L299
+    }
+
+    A Minimal Rust Kernel {
+        * Quiz yourself on what happens during the boot process and in what order.
+            - https://os.phil-opp.com/minimal-rust-kernel/#the-boot-process
+
+            + UEFI: https://en.wikipedia.org/wiki/UEFI 
+            + BIOS: https://en.wikipedia.org/wiki/BIOS
+            + https://en.wikipedia.org/wiki/Power-on_self-test
+            + https://en.wikipedia.org/wiki/Read-only_memory
+
+        * Quiz yourself on everything BIOS boot.
+            - https://os.phil-opp.com/minimal-rust-kernel/#bios-boot
+
+        * Quiz yourself on everything about The Multiboot Standard.
+            - https://os.phil-opp.com/minimal-rust-kernel/#the-multiboot-standard
+
+            + "If you’re interested in writing a Multiboot compliant kernel,
+              check out the first edition of this blog series."
+
+        / Real mode: https://en.wikipedia.org/wiki/Real_mode
+        / Protected mode: https://en.wikipedia.org/wiki/Protected_mode
+        / Long mode: https://en.wikipedia.org/wiki/Long_mode
+
+        * UEFI: The article doesn't include much about it, but do something to
+          learn it as you shall with BIOS.
+
+        --- REVIEW PAST HERE ---
+
+        * Quiz yourself on target triples and the meaning of the term ABI and on
+          all the different fields of a custom target json and their meanings.
+          Also just read more of this and make a better todo here.
+            - https://os.phil-opp.com/minimal-rust-kernel/#target-specification
+
+        * WE'RE NOT DONE. CONTINUE THIS TOMORROW.
+    }
+
+    VGA Text Mode {
+    }
+
+    Testing {
+    }
+}
+
+INTERRUPTS {
+    CPU Exceptions {
+    }
+
+    Double Faults {
+    }
+
+    Hardware Interrupts {
+    }
+}
+
+MEMORY MANAGEMENT {
+    Introduction to Paging {
+    }
+
+    Paging Implementation {
+    }
+
+    Heap Allocation {
+    }
+
+    Allocator Designs {
+    }
+}
+
+MULTI-TASKING {
+    Async/Await {
+    }
+}
