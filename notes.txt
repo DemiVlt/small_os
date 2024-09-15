@@ -38,14 +38,23 @@ BARE BONES {
         * UEFI: The article doesn't include much about it, but do something to
           learn it as you shall with BIOS.
 
-        --- REVIEW PAST HERE ---
-
-        * Quiz yourself on target triples and the meaning of the term ABI and on
-          all the different fields of a custom target json and their meanings.
-          Also just read more of this and make a better todo here.
+        * Quiz yourself on target triples, the meaning of the term ABI, all the
+          different fields of a custom target json and their meanings, the red
+          zone, and SIMD.
             - https://os.phil-opp.com/minimal-rust-kernel/#target-specification
+            - https://os.phil-opp.com/red-zone/
+            - https://os.phil-opp.com/disable-simd/
 
-        * WE'RE NOT DONE. CONTINUE THIS TOMORROW.
+            + https://en.wikipedia.org/wiki/Single_instruction,_multiple_data
+
+        * Quiz yourself on everything VGA buffer.
+            - https://os.phil-opp.com/minimal-rust-kernel/#printing-to-screen
+
+        * Quiz yourself a bit on how bootimage works and what an ELF file is.
+            - https://os.phil-opp.com/minimal-rust-kernel/#how-does-it-work
+
+        / https://os.phil-opp.com/minimal-rust-kernel/#real-machine
+        / Maybe look at bootimage's Readme?
     }
 
     VGA Text Mode {
