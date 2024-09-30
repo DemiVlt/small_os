@@ -1,4 +1,3 @@
-use core::ptr::addr_of_mut;
 use lazy_static::lazy_static;
 use x86_64::structures::gdt::{Descriptor, GlobalDescriptorTable, SegmentSelector};
 use x86_64::structures::tss::TaskStateSegment;
@@ -13,7 +12,9 @@ lazy_static! {
             const STACK_SIZE: usize = 4096 * 5;
             static mut STACK: [u8; STACK_SIZE] = [0; STACK_SIZE];
 
-            let stack_start = VirtAddr::from_ptr(addr_of_mut!(STACK));
+            #[allow(unused_unsafe)]
+            let stack_start = VirtAddr::from_ptr(unsafe { &raw mut STACK });
+
             stack_start + STACK_SIZE
         };
         tss

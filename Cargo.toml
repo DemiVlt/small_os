@@ -1,5 +1,6 @@
 # When we do these to-do-laters, let's make a bigger folder 
 # and include multiple vers. of "small_os" for the diff changes within it.
+# Stop writing comments here.
 [package]
 name = "small_os"
 version = "0.1.0"
@@ -28,6 +29,8 @@ volatile = "0.2.6"
 bootloader = "0.9" # Let's make our own ver. of this once we're done with the tutorial's given.
 x86_64 = "0.14.2" # Let's manually write out the assembly for this later.
 uart_16550 = "0.2.0"
+pic8259 = "0.10.1"
+pc-keyboard = "0.7.0"
 
 [dependencies.lazy_static]
 version = "1.0"

@@ -1,5 +1,8 @@
 * I really like the idea of having notes for this and really hope you follow
   along, Demivolt.
+* It's probably a better idea to do more of build-your-own OS stuffs, actually.
+    - Way more efficient.
+* Maybe just write EC ideas? So no quizzes.
 * https://os.phil-opp.com/
 
 BARE BONES { 
