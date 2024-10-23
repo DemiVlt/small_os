@@ -32,7 +32,8 @@ impl BootInfoFrameAllocator {
         self.memory_map
             .iter()
             .filter(|r| r.region_type == MemoryRegionType::Usable)
-            .map(|r| r.range.start_frame_number * 4096)
+            .map(|r| r.range.start_addr()..r.range.end_addr())
+            .flat_map(|r| r.step_by(4096))
             .map(|addr| PhysFrame::containing_address(PhysAddr::new(addr)))
     }
 }
