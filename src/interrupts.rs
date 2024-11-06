@@ -1,6 +1,5 @@
 use crate::{gdt::DOUBLE_FAULT_IST_INDEX, hlt_loop, print, println};
 use lazy_static::lazy_static;
-use pc_keyboard::{layouts, DecodedKey, HandleControl, Keyboard, ScancodeSet1};
 use pic8259::ChainedPics;
 use spin;
 use x86_64::{
@@ -59,26 +58,29 @@ extern "x86-interrupt" fn page_fault_handler(
 }
 
 extern "x86-interrupt" fn keyboard_interrupt_handler(_stack_frame: InterruptStackFrame) {
-    lazy_static! {
-        static ref KEYBOARD: spin::Mutex<Keyboard<layouts::Us104Key, ScancodeSet1>> =
-            spin::Mutex::new(Keyboard::new(
-                ScancodeSet1::new(),
-                layouts::Us104Key,
-                HandleControl::Ignore
-            ));
-    }
-    let mut keyboard = KEYBOARD.lock();
+    // lazy_static! {
+    //     static ref KEYBOARD: spin::Mutex<Keyboard<layouts::Us104Key, ScancodeSet1>> =
+    //         spin::Mutex::new(Keyboard::new(
+    //             ScancodeSet1::new(),
+    //             layouts::Us104Key,
+    //             HandleControl::Ignore
+    //         ));
+    // }
+    // let mut keyboard = KEYBOARD.lock();
+
     let mut port = Port::new(0x60);
     let scan_code: u8 = unsafe { port.read() };
+    crate::task::keyboard::add_scancode(scan_code);
 
-    if let Ok(Some(key_event)) = keyboard.add_byte(scan_code) {
-        if let Some(key) = keyboard.process_keyevent(key_event) {
-            match key {
-                DecodedKey::RawKey(key_code) => print!("{:?}", key_code),
-                DecodedKey::Unicode(character) => print!("{character}"),
-            }
-        }
-    }
+    // if let Ok(Some(key_event)) = keyboard.add_byte(scan_code) {
+    //     if let Some(key) = keyboard.process_keyevent(key_event) {
+    //         match key {
+    //             DecodedKey::RawKey(key_code) => print!("{:?}", key_code),
+    //             DecodedKey::Unicode(character) => print!("{character}"),
+    //         }
+    //     }
+    // }
+
     unsafe {
         PICS.lock()
             .notify_end_of_interrupt(InterruptIndex::Keyboard as u8);

@@ -1,6 +1,7 @@
 # When we do these to-do-laters, let's make a bigger folder 
 # and include multiple vers. of "small_os" for the diff changes within it.
 # Stop writing comments here.
+# Jesus, there's so much here now.
 [package]
 name = "small_os"
 version = "0.1.0"
@@ -31,6 +32,20 @@ uart_16550 = "0.2.0"
 pic8259 = "0.10.1"
 pc-keyboard = "0.7.0"
 linked_list_allocator = "0.9.0"
+
+[dependencies.futures-util]
+version = "0.3.4"
+default-features = false
+features = ["alloc"]
+
+[dependencies.conquer-once]
+version = "0.2.0"
+default-features = false
+
+[dependencies.crossbeam-queue]
+version = "0.3.11"
+default-features = false
+features = ["alloc"]
 
 [dependencies.lazy_static]
 version = "1.0"
